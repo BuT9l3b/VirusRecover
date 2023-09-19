@@ -327,5 +327,4 @@ class Func:
 
 
 if __name__ == '__main__':
-    # create()
     app = App()
