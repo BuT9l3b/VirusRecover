@@ -24,3 +24,4 @@ messagebox_false_title = 'Ошибка'
 messagebox_false_text = 'Произошла ошибка при выполнении операции: '
 messagebox_title1 = 'Внимание'
 messagebox_text1 = 'Для смены языка необходимо перезапустить приложение'
+

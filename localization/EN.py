@@ -24,3 +24,4 @@ messagebox_false_title = 'Error'
 messagebox_false_text = 'An error occurred while performing the operation: '
 messagebox_title1 = 'Attention'
 messagebox_text1 = 'To change the language, the application needs to be restarted'
+
