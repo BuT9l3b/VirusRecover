@@ -1,4 +1,4 @@
-# Virus Recovery v1.001
+# Virus Recovery v1.002
 
 The Virus Recovery Helper is a small program designed to assist in mitigating the consequences of computer viruses. 
 
