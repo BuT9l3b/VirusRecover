@@ -14,7 +14,7 @@ icon_off = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x02\x00\x00\x00\x02\x00
 key_path = r"Software\VirusRecover"
 path = os.environ.get('PROGRAMFILES')
 
-vers = '1.001'
+vers = '1.002'
 programmer = 'BuT9l3b'
 bg_col = 'gray17'
 lang = None
