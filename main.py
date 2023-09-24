@@ -77,23 +77,24 @@ class App:
         self.window.resizable(False, False)
 
     def window_interface(self):
-        ctk.CTkFrame(self.window, width=460, height=140).place(x=20, y=20)
+        frame = ctk.CTkFrame(self.window, width=460, height=140)
+        frame.place(x=20, y=20)
 
-        but1 = ctk.CTkButton(self.window, text=unlock, width=200, height=38, font=('Arial', 20),
+        but1 = ctk.CTkButton(frame, text=unlock, width=200, height=38, font=('Arial', 20),
                              command=lambda: Root(self.window, 'Unlock', '520x190+600+360', 'unl'))
-        but1.place(x=40, y=40)
+        but1.place(x=20, y=20)
 
-        but2 = ctk.CTkButton(self.window, text=taskmgr, width=200, height=38, font=('Arial', 20),
+        but2 = ctk.CTkButton(frame, text=taskmgr, width=200, height=38, font=('Arial', 20),
                              command=lambda: subprocess.Popen('Taskmgr.exe'))
-        but2.place(x=260, y=40)
+        but2.place(x=240, y=20)
 
-        but3 = ctk.CTkButton(self.window, text=settings, height=38, width=200, font=('Arial', 20),
+        but3 = ctk.CTkButton(frame, text=settings, height=38, width=200, font=('Arial', 20),
                              command=lambda: Root(self.window, 'Settings', '500x180+600+360', 'set'))
-        but3.place(x=40, y=100)
+        but3.place(x=20, y=80)
 
-        but4 = ctk.CTkButton(self.window, text=about, height=38, width=200, font=('Arial', 20),
+        but4 = ctk.CTkButton(frame, text=about, height=38, width=200, font=('Arial', 20),
                              command=lambda: Root(self.window, 'Info', '300x200+600+360', 'inf'))
-        but4.place(x=260, y=100)
+        but4.place(x=240, y=80)
 
 
 class Root:
@@ -144,54 +145,57 @@ class Root:
         but4.place(x=260, y=100)
 
     def unl(self):
-        frame = ctk.CTkFrame(self.root, width=440, height=170).place(x=60, y=10)
+        frame1 = ctk.CTkFrame(self.root, width=440, height=170)
+        frame1.place(x=60, y=10)
         but1 = ctk.CTkButton(self.root, text='', width=30, height=30, image=self.ret_icon, command=self.ret)
         but1.place(x=7, y=10)
         but2 = ctk.CTkButton(self.root, text='', width=30, height=30, image=self.off_icon, command=lambda: sys.exit(0))
         but2.place(x=7, y=60)
-        ctk.CTkButton(self.root, text=unl_regedit, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_regedit).place(x=70, y=20)
-        ctk.CTkButton(self.root, text=unl_taskmgr, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_taskmgr).place(x=290, y=20)
-        ctk.CTkButton(self.root, text=unl_pow_but, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_power_buttons).place(x=70, y=60)
-        ctk.CTkButton(self.root, text=unl_set, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_settings).place(x=290, y=60)
-        ctk.CTkButton(self.root, text=unl_key_short, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_shortcut).place(x=70, y=100)
-        ctk.CTkButton(self.root, text=recover_explorer, width=200, height=30, font=('Arial', 11),
-                      command=Func.recover_explorer).place(x=290, y=100)
-        ctk.CTkButton(self.root, text=unl_win_but, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_win_button).place(x=70, y=140)
-        ctk.CTkButton(self.root, text=unlock_disks, width=200, height=30, font=('Arial', 11),
-                      command=Func.unblock_disks).place(x=290, y=140)
+        ctk.CTkButton(frame1, text=unl_regedit, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_regedit).place(x=10, y=10)
+        ctk.CTkButton(frame1, text=unl_taskmgr, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_taskmgr).place(x=230, y=10)
+        ctk.CTkButton(frame1, text=unl_pow_but, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_power_buttons).place(x=10, y=50)
+        ctk.CTkButton(frame1, text=unl_set, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_settings).place(x=230, y=50)
+        ctk.CTkButton(frame1, text=unl_key_short, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_shortcut).place(x=10, y=90)
+        ctk.CTkButton(frame1, text=recover_explorer, width=200, height=30, font=('Arial', 11),
+                      command=Func.recover_explorer).place(x=230, y=90)
+        ctk.CTkButton(frame1, text=unl_win_but, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_win_button).place(x=10, y=130)
+        ctk.CTkButton(frame1, text=unlock_disks, width=200, height=30, font=('Arial', 11),
+                      command=Func.unblock_disks).place(x=230, y=130)
 
     def inf(self):
-        frame = ctk.CTkFrame(self.root, width=280, height=180).place(x=10, y=10)
-        but1 = ctk.CTkButton(self.root, text='', width=30, height=30, image=self.ret_icon, command=self.ret)
-        but1.place(x=10, y=10)
-        but2 = ctk.CTkButton(self.root, text='', width=30, height=30, image=self.off_icon, command=lambda: sys.exit(0))
-        but2.place(x=244, y=10)
-        ctk.CTkLabel(self.root, text='VirusRecover', bg_color=bg_col, font=('Arial', 20)).place(x=85, y=20)
-        ctk.CTkLabel(self.root, text=dev, bg_color=bg_col, font=('Arial', 20)).place(x=20, y=80)
-        ctk.CTkLabel(self.root, text=text_vers, bg_color=bg_col, font=('Arial', 20)).place(x=20, y=140)
-        ctk.CTkLabel(self.root, text=programmer, bg_color=bg_col, font=('Arial', 20)).place(x=180, y=80)
-        ctk.CTkLabel(self.root, text=vers, bg_color=bg_col, font=('Arial', 20)).place(x=180, y=140)
+        frame1 = ctk.CTkFrame(self.root, width=280, height=180)
+        frame1.place(x=10, y=10)
+        but1 = ctk.CTkButton(frame1, text='', width=30, height=30, image=self.ret_icon, command=self.ret)
+        but1.place(x=0, y=0)
+        but2 = ctk.CTkButton(frame1, text='', width=30, height=30, image=self.off_icon, command=lambda: sys.exit(0))
+        but2.place(x=234, y=0)
+        ctk.CTkLabel(frame1, text='VirusRecover', bg_color=bg_col, font=('Arial', 20)).place(x=75, y=10)
+        ctk.CTkLabel(frame1, text=dev, bg_color=bg_col, font=('Arial', 20)).place(x=10, y=70)
+        ctk.CTkLabel(frame1, text=text_vers, bg_color=bg_col, font=('Arial', 20)).place(x=10, y=130)
+        ctk.CTkLabel(frame1, text=programmer, bg_color=bg_col, font=('Arial', 20)).place(x=170, y=70)
+        ctk.CTkLabel(frame1, text=vers, bg_color=bg_col, font=('Arial', 20)).place(x=170, y=130)
 
     def set(self):
-        frame = ctk.CTkFrame(self.root, width=430, height=160).place(x=60, y=10)
+        frame1 = ctk.CTkFrame(self.root, width=430, height=160)
+        frame1.place(x=60, y=10)
         ctk.CTkButton(self.root, text='', width=30, height=30, image=self.ret_icon, command=self.ret).place(x=7, y=10)
         ctk.CTkButton(self.root, text='', width=30, height=30, image=self.off_icon, command=lambda: sys.exit(0)).place(x=7, y=60)
-        ctk.CTkLabel(self.root, text=text_theme, bg_color=bg_col, font=('Arial', 20)).place(x=70, y=20)
+        ctk.CTkLabel(frame1, text=text_theme, bg_color=bg_col, font=('Arial', 20)).place(x=20, y=10)
         q = tkinter.StringVar(self.root)
         q.set(choose_theme)
         w = tkinter.StringVar(self.root)
         w.set(choose_lang)
-        ctk.CTkOptionMenu(self.root, variable=q, values=themes, width=220, font=('Arial', 20),
-                          command=self.change_theme).place(x=180, y=20)
-        ctk.CTkLabel(self.root, text=text_lang, bg_color=bg_col, font=('Arial', 20)).place(x=70, y=60)
-        ctk.CTkOptionMenu(self.root, variable=w, values=languages, width=220, font=('Arial', 20),
-                          command=self.change_language).place(x=180, y=60)
+        ctk.CTkOptionMenu(frame1, variable=q, values=themes, width=220, font=('Arial', 20),
+                          command=self.change_theme).place(x=120, y=10)
+        ctk.CTkLabel(frame1, text=text_lang, bg_color=bg_col, font=('Arial', 20)).place(x=20, y=50)
+        ctk.CTkOptionMenu(frame1, variable=w, values=languages, width=220, font=('Arial', 20),
+                          command=self.change_language).place(x=120, y=50)
 
     def change_theme(self, selection):
         global bg_col
